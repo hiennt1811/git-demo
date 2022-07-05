@@ -103,9 +103,6 @@ const TourDetail: NextPage<TourDetailProps> = (props) => {
                           <div className="item-news-pys scroll-fix-tour item-news-pys-detail-tour-mobile">
                             <ul className="nav nav-tour nav-tour-mobile" role="tablist">
                               <li className="nav-item nav-item-tour">
-                                <a id="introduce" href="#gioithieu" className="nav-link nav-link-tour active" data-toggle="tab">
-                                  Giới thiệu
-                                </a>
                               </li>
                               <li className="nav-item nav-item-tour">
                                 <a id="schedule" href="#lichtrinh" className="nav-link nav-link-tour" data-toggle="tab">Lịch
