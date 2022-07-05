@@ -45,9 +45,9 @@ export const getStaticProps: GetStaticProps<TourDetailProps, TourDetailParams> =
   const {slug} = params;
   const idInString = slug.substring(0, slug.indexOf('-'));
   const id = parseInt(idInString);
-  const tour = await getPostDetail(id);
-  const images = await getTourAlbum(id);
-  const categories = await getAncestorsCategories(findMax(tour?.categories!, (item, max) => (item.id! > max.id!)))
+  const tour = await getTourDetail(id);
+  const images = await getAlbumOfTour(id);
+  const categories = await getCategories(findMax(tour?.categories!, (item, max) => (item.id! > max.id!)))
   console.log('post', tour?.categories);
   if (!tour) {
     return {notFound: true}
@@ -115,7 +115,7 @@ const TourDetail: NextPage<TourDetailProps> = (props) => {
                                 !tour.tourFne && (
                                   <li className="nav-item nav-item-tour">
                                     <a id="clause" href="#dieukhoan" className="nav-link nav-link-tour" data-toggle="tab">Bao
-                                      gồm và Điều khoản</a>
+                                      gồm và diều khoản</a>
                                   </li>
                                 )
                               }
@@ -124,7 +124,7 @@ const TourDetail: NextPage<TourDetailProps> = (props) => {
                                   giá Tour</a>
                               </li>
                               <li className="nav-item nav-item-tour">
-                                <a id="comment" href="#binhluan" className="nav-link nav-link-tour" data-toggle="tab">Bình
+                                <a id="comment-customers" href="#binhluan" className="nav-link nav-link-tour" data-toggle="tab">Bình
                                   luận</a>
                               </li>
                             </ul>
